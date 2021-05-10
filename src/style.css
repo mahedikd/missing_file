@@ -1,0 +1,234 @@
+@font-face {
+	font-family: leckerli;
+	src: url(LeckerliOne.ttf);
+}
+@font-face {
+	font-family: lora;
+	src: url(Lora-Italic.ttf);
+}
+:root {
+	--radius: 0.8rem;
+}
+body {
+	font-family: lora, serif;
+	background-position: 0px 5px, 10px 0px, 0px 10px, 10px 5px, 0% 0%, 0% 0%;
+	background-repeat: repeat, repeat, repeat, repeat, repeat, repeat;
+	background-attachment: scroll, scroll, scroll, scroll, scroll, scroll;
+	background-image: linear-gradient(27deg, rgb(21, 21, 21) 5px, transparent 5px),
+		linear-gradient(207deg, rgb(21, 21, 21) 5px, transparent 5px),
+		linear-gradient(27deg, rgb(34, 34, 34) 5px, transparent 5px),
+		linear-gradient(207deg, rgb(34, 34, 34) 5px, transparent 5px),
+		linear-gradient(90deg, rgb(27, 27, 27) 10px, transparent 10px),
+		linear-gradient(
+			rgb(29, 29, 29) 25%,
+			rgb(26, 26, 26) 25%,
+			rgb(26, 26, 26) 50%,
+			transparent 50%,
+			transparent 75%,
+			rgb(36, 36, 36) 75%,
+			rgb(36, 36, 36)
+		);
+	background-origin: padding-box, padding-box, padding-box, padding-box, padding-box,
+		padding-box;
+	background-clip: border-box, border-box, border-box, border-box, border-box,
+		border-box;
+	background-color: rgb(19, 19, 19);
+	background-size: 20px 20px;
+	--darkreader-inline-bgimage: linear-gradient(27deg, #101112 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(207deg, #101112 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(27deg, #1a1c1d 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(207deg, #1a1c1d 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(90deg, #141617 10px, rgba(0, 0, 0, 0) 10px),
+		linear-gradient(
+			#161819 25%,
+			#141516 25%,
+			#141516 50%,
+			rgba(0, 0, 0, 0) 50%,
+			rgba(0, 0, 0, 0) 75%,
+			#1b1d1e 75%,
+			#1b1d1e
+		);
+	--darkreader-inline-bgcolor: #0e0f10;
+}
+/* /////////////////////////////////////////////// */
+svg {
+	fill: white;
+}
+#L6 {
+	width: 75px;
+	height: 75px;
+	display: none;
+}
+h4 {
+	font-family: leckerli, cursive;
+}
+label {
+	color: #192328;
+}
+/* //////////////////////////////////////// */
+.card {
+	max-width: 660px;
+	width: 96%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	border-radius: var(--radius) var(--radius) 0.1rem var(--radius);
+	background-color: #333;
+}
+.innerContainer {
+	padding: 15px;
+	position: relative;
+	background-color: #39b26bdc;
+	border-radius: var(--radius) var(--radius) 0.1rem 1rem;
+	box-shadow: inset 0 -2px 2px -2px black, inset 0 -3px 5px -3px black,
+		inset 0 -4px 10px -4px black;
+}
+.innerContainer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: var(--radius) var(--radius) 0.1rem var(--radius);
+	z-index: -1;
+	background-color: rgb(153, 153, 153);
+	background-image: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 35px,
+		rgba(255, 255, 255, 0.5) 35px,
+		rgba(255, 255, 255, 0.5) 70px
+	);
+	--darkreader-inline-bgcolor: #60686c;
+	--darkreader-inline-bgimage: repeating-linear-gradient(
+		45deg,
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0) 35px,
+		rgba(24, 26, 27, 0.5) 35px,
+		rgba(24, 26, 27, 0.5) 70px
+	);
+}
+.outputContainer {
+	padding: 15px;
+	border-radius: 0rem 0rem var(--radius) var(--radius);
+}
+
+.outputContainer :is(label, #selected, #missingOutput) {
+	color: #fff;
+}
+/* ////////////////// */
+#selected,
+#missingOutput {
+	height: 180px;
+}
+/* /////////////////////// */
+#selectedTotal,
+#missingTotal {
+	height: 80px;
+	text-align: center;
+}
+/* //////////////////////// */
+#selected,
+#selectedTotal,
+#missingTotal,
+#missingOutput,
+#startFrom,
+#count,
+#inputFile {
+	background: transparent;
+	border: none;
+	resize: none;
+	border-radius: 0.6rem 0.6rem 0.1rem 0.6rem;
+}
+/* //////////////////// */
+textarea,
+input {
+	box-shadow: inset 0 0 2px black, inset 0 0 3px black;
+}
+/* ///////////////// */
+.sha {
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.651), 1px 2px 1px rgba(0, 0, 0, 0.541),
+		1px 3px 1px rgba(0, 0, 0, 0.466), 1px 4px 2px rgba(0, 0, 0, 0.336),
+		1px 5px 3px rgba(0, 0, 0, 0.2);
+}
+/* /////////////////////// */
+::file-selector-button {
+	display: none;
+}
+/* ////////////////////// */
+@media only screen and (max-width: 420px) {
+	svg {
+		width: 58px;
+		height: 58px;
+	}
+}
+/* ///////////////// */
+textarea {
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+textarea::-webkit-scrollbar {
+	display: none;
+}
+/* ///////////// */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+/* flashin animating  */
+.flash {
+	color: #212529;
+	text-align: center;
+	font-family: leckerli, cursive;
+	font-size: 1.3rem;
+	animation: glowing 6s infinite alternate;
+}
+@keyframes glowing {
+	0% {
+		background-color: #dc3545;
+		box-shadow: inset 0 0 5px #000000;
+	}
+	100% {
+		background-color: #39b26bcc;
+		box-shadow: inset 0 0 5px #000000;
+	}
+}
+.help,
+.hide {
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	top: 2%;
+	right: 2%;
+	cursor: pointer;
+}
+.message {
+	z-index: 3;
+	color: white;
+	background: #333;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 2rem;
+	overflow-x: auto;
+	display: none;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.is-visible {
+	display: block;
+}
+.is-open {
+	opacity: 1;
+}
